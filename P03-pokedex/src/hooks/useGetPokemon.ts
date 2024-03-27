@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import PokemonList, { PokemonListItem } from "../types/PokemonList";
 import { API_BASE_URL } from "../constants/misc";
 import PokemonData from "../types/PokemonData";
 

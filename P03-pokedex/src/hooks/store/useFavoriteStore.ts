@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { FAVORITES_LC_KEY } from "../../constants/misc";
+import { FAVORITES_LS_KEY } from "../../constants/misc";
 
 interface FavoriteStore {
     favorites: number[];
@@ -8,11 +8,11 @@ interface FavoriteStore {
 }
 
 const useFavoriteStore = create<FavoriteStore>((updateFn) => ({
-    favorites: localStorage.getItem(FAVORITES_LC_KEY)?.split(",").map(item => parseInt(item)) || [],
+    favorites: localStorage.getItem(FAVORITES_LS_KEY)?.split(",").map(item => parseInt(item)) || [],
     addFavorite: (pokemonId) => updateFn((state) => {
         const newFavorites = [...state.favorites, pokemonId];
 
-        localStorage.setItem(FAVORITES_LC_KEY, newFavorites.join(","));
+        localStorage.setItem(FAVORITES_LS_KEY, newFavorites.join(","));
 
         return { favorites: newFavorites }
     }),
@@ -20,9 +20,9 @@ const useFavoriteStore = create<FavoriteStore>((updateFn) => ({
         const newFavorites = state.favorites.filter((id) => id !== pokemonId);
 
         if (newFavorites.length > 0) {
-            localStorage.setItem(FAVORITES_LC_KEY, newFavorites.join(","));
+            localStorage.setItem(FAVORITES_LS_KEY, newFavorites.join(","));
         } else {
-            localStorage.removeItem(FAVORITES_LC_KEY);
+            localStorage.removeItem(FAVORITES_LS_KEY);
         }
 
         return { favorites: newFavorites }

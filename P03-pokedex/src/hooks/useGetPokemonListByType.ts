@@ -1,6 +1,5 @@
 import { API_BASE_URL } from "../constants/misc";
 import { useQuery } from "@tanstack/react-query";
-import { PokemonListItem } from "../types/PokemonList";
 import PokemonListByType, { Pokemon } from "../types/PokemonListByType";
 
 interface GetPokemonListByTypeProps {
