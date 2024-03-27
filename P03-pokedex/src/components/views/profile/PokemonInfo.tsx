@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import useGetPokemon from "../../../hooks/useGetPokemon";
 import { getMainPokemonType, getPokemonTypeBg } from "../../../utils/pokemon-type";
 import PokemonSpriteList from "./PokemonSpriteList";
-import { conertLibsToKg, convertInchesToCm } from "../../../utils/misc";
+import { convertLibsToKg, convertInchesToCm } from "../../../utils/misc";
 import PokemonTypeIconList from "../pokemon-type/PokemonTypeIconList";
 
 interface PokemonInfoProps {
@@ -28,7 +28,7 @@ const PokemonInfo: React.FC<PokemonInfoProps> = ({ pokemonRef }) => {
                     <PokemonTypeIconList pokemonDataTypes={pokemonData?.types ?? []} />
                 </div>
                 <span>{`Id: ${pokemonData?.id ?? "-"}`}</span>
-                <span>{`Weight: ${pokemonData ? conertLibsToKg(pokemonData.weight).toFixed(2) : "-"} kg`}</span>
+                <span>{`Weight: ${pokemonData ? convertLibsToKg(pokemonData.weight).toFixed(2) : "-"} kg`}</span>
                 <span>{`Height: ${pokemonData ? convertInchesToCm(pokemonData.height).toFixed(2) : "-"} cm`}</span>
                 {pokemonData && <PokemonSpriteList sprites={pokemonData?.sprites} />}
             </div>
