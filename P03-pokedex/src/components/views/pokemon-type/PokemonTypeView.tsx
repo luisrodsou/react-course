@@ -7,12 +7,12 @@ import useSeachStore from "../../../hooks/store/useSearchStore";
 const PokemonTypeView: React.FC = () => {
     const { pokemonType } = useParams();
     const getPokemonListByTypeResult = pokemonType ? useGetPokemonListByType({ pokemonType }): null;
-    const pokemonList = getPokemonListByTypeResult?.pokemonList;
-    const finishSearch = useSeachStore((state) => state.finishSearch);
+    const pokemonList = getPokemonListByTypeResult ? getPokemonListByTypeResult.pokemonList : [];
+    const finishSearch = useSeachStore(state => state.finishSearch);
 
     finishSearch();
 
-    return pokemonList ? <PokemonCardList pokemonRefList={pokemonList.map(item => item.pokemon.name)} /> : <></>;
+    return <PokemonCardList pokemonRefList={pokemonList.map(item => item.pokemon.name)} />;
 }
 
 export default PokemonTypeView;
