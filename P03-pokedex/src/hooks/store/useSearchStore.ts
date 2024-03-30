@@ -17,7 +17,7 @@ const useSeachStore = create<SearchStore>((updateFn) => ({
     currentFilter: "",
     setCurrentFilter: (filter: string) => updateFn({ currentFilter: filter }),
     currentSearch: "",
-    search: () => updateFn((state) => ({ currentSearch: state.currentFilter.toLowerCase() }))
+    search: () => updateFn(state => ({ currentSearch: state.currentFilter.toLowerCase() }))
 }));
 
 export default useSeachStore;

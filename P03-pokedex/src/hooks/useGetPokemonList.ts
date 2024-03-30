@@ -5,10 +5,10 @@ import PokemonList, { PokemonListItem } from "../types/PokemonList";
 
 export interface GetPokemonListResult {
     pokemonList: PokemonListItem[];
-    isLoading: boolean;
-    error: string | null;
     goToNextPage?: (() => void);
     goToPreviousPage?: (() => void);
+    isLoading: boolean;
+    error: string | null;
 }
 
 const useGetPokemonList = (): GetPokemonListResult => {
@@ -40,10 +40,10 @@ const useGetPokemonList = (): GetPokemonListResult => {
 
     return {
         pokemonList: data?.results ?? [],
-        isLoading: isLoading,
-        error: error?.message ?? null,
         goToNextPage: data?.next ? goToNextPage : undefined,
-        goToPreviousPage: data?.previous ? goToPreviousPage : undefined
+        goToPreviousPage: data?.previous ? goToPreviousPage : undefined,
+        isLoading: isLoading,
+        error: error?.message ?? null
     };
 }
 

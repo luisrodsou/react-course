@@ -5,7 +5,7 @@ import useSearchStore from "../../../hooks/store/useSearchStore";
 
 const ProfileView: React.FC = () => {
     const { pokemonName } = useParams();
-    const finishSearch = useSearchStore((state) => state.finishSearch);
+    const finishSearch = useSearchStore(state => state.finishSearch);
 
     finishSearch();
     
