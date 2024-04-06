@@ -1,4 +1,4 @@
-import { convertInchesToCm, convertLibsToKg } from "../../utils/misc";
+import { convertInchesToCm, convertLibsToKg } from "../../utils";
 
 describe("convertInchesToCm", () => {
     const testData = [

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { FAVORITES_LS_KEY } from "../../constants/misc";
+import { FAVORITES_LS_KEY } from "../../constants";
 
 interface FavoriteStore {
     favorites: number[];

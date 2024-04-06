@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { API_BASE_URL } from "../constants/misc";
+import { API_BASE_URL } from "../constants";
 import PokemonData from "../types/PokemonData";
 
 export interface GetPokemonProps {

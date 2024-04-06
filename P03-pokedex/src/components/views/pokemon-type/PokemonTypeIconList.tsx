@@ -12,12 +12,13 @@ const PokemonTyeIconList: React.FC<PokemonTypeIconListProps> = ({ pokemonDataTyp
     const goToPokemonTypeView = (pokemonType: string) => () => navigate(`/type/${pokemonType}`);
 
     return (
-        <div className="absolute top-2 right-2 gap-2 cursor-pointer">
+        <div className="absolute top-2 right-2 gap-2 cursor-pointer" data-testid="pokemonTypeIconList">
             {pokemonDataTypes.map((pokemonDataType) => (
                 <div
                     key={pokemonDataType.type.name}
                     onClick={goToPokemonTypeView(pokemonDataType.type.name)}
                     className="bg-white p-1 rounded-full w-6 h-6 mb-1"
+                    data-testid={`pokemonTypeIcon-${pokemonDataType.type.name}`}
                 >
                     <img
                         src={getPokemonTypeIcon(pokemonDataType.type.name)}

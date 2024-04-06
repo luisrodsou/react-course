@@ -6,7 +6,7 @@ const SearchButton: React.FC = () => {
     const startSearch = useSeachStore(state => state.startSearch);
 
     return (
-        <button onClick={startSearch} className="hover:text-white">
+        <button onClick={startSearch} className="hover:text-white" data-testid="searchButton">
             <FaSearch />
         </button>
     );
