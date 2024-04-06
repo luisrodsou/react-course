@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../constants/misc";
+import { API_BASE_URL } from "../constants";
 import { useQuery } from "@tanstack/react-query";
 import PokemonListByType, { Pokemon } from "../types/PokemonListByType";
 

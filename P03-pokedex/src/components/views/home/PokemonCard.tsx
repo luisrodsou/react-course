@@ -21,7 +21,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemonRef }) => {
         <div className={`relative w-56 h-56 rounded-lg shadow-lg p-4 cursor-pointer ${backgroundClass ?? ""}`} data-testid="pokemonCard">
             <FavoriteButton pokemonId={pokemonData.id} />
             <PokemonTypeIconList pokemonDataTypes={pokemonData.types} />
-            <div onClick={navigateToPokemon} className="flex flex-col items-center mx-auto">
+            <div onClick={navigateToPokemon} className="flex flex-col items-center mx-auto" data-testid="pokemonCardLabelAndImg">
                 <Label>{pokemonData.name}</Label>
                 <img
                     className="mx-auto w-40 h-40"

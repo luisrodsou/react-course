@@ -6,7 +6,7 @@ interface LabelProps {
 
 const Label: React.FC<LabelProps> = ({children}: LabelProps) => (
     <div className="w-24 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
-        <span className="first-letter:capitalize">{children}</span>
+        <span className="first-letter:capitalize" data-testid="labelSpan">{children}</span>
     </div>
 );
 

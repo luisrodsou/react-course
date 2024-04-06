@@ -19,8 +19,10 @@ const SearchModal: React.FC = () => {
             isOpen={isOpen}
             onRequestClose={finishSearch}
             className="w-1/3 h-1/2 bg-white mx-auto p-5 mt-5 flex flex-col gap-5 items-center shadow-lg rounded-lg"
+            testId="searchModal"
         >
-            <input type="text" placeholder="Pokemon name or ID" onChange={updateFilter} className="border p-2" />
+            <input type="text" placeholder="Pokemon name or ID" onChange={updateFilter}
+                className="border p-2" data-testid="searchInput" />
             <Button onClick={search}>Search</Button>
             {currentSearch && <PokemonCard pokemonRef={currentSearch} />}
         </Modal>

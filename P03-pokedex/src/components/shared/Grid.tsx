@@ -9,10 +9,10 @@ interface GridProps {
 
 const Grid: React.FC<GridProps> = ({children, goToPreviousPage, goToNextPage}: GridProps) => (
     <div className="container mx-auto">
-        <div className="grid grid-cols-6 gap-3 mx-auto">
+        <div className="grid grid-cols-3 gap-3 mx-auto">
             {children}
         </div>
-        <div className="flex justify-center mt-4 gap-5">
+        <div className="flex justify-center mt-4 gap-5" data-testid="gridNavigation">
             {goToPreviousPage && <Button onClick={goToPreviousPage}>Previous</Button>}
             {goToNextPage && <Button onClick={goToNextPage}>Next</Button>}
         </div>

@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import useGetPokemon from "../../../hooks/useGetPokemon";
 import { getMainPokemonType, getPokemonTypeBg } from "../../../utils/pokemon-type";
 import PokemonSpriteList from "./PokemonSpriteList";
-import { convertLibsToKg, convertInchesToCm } from "../../../utils/misc";
+import { convertLibsToKg, convertInchesToCm } from "../../../utils";
 import PokemonTypeIconList from "../pokemon-type/PokemonTypeIconList";
 
 interface PokemonInfoProps {
@@ -15,7 +15,7 @@ const PokemonInfo: React.FC<PokemonInfoProps> = ({ pokemonRef }) => {
     const backgroundClass = useMemo(() => mainType ? getPokemonTypeBg(mainType) : null, [mainType]);
 
     return pokemonData ? (
-        <div className="flex flex-row justify-between shadow-lg bg-gray-100 rounded-lg">
+        <div className="flex flex-row justify-between shadow-lg bg-gray-100 rounded-lg" data-testid="pokemonInfo">
             <div className={`w-72 h-72 rounded-l-lg items-center ${backgroundClass ?? ""}`}>
                 <img
                     src={pokemonData.sprites.front_default}
