@@ -5,12 +5,10 @@ interface ButtonProps {
     onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-    return (
-        <button onClick={onClick} className="rounded-lg bg-yellow-400 border p-2 hover:text-white">
-            {children}
-        </button>
-    );
-};
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => (
+    <button onClick={onClick} className="rounded-lg bg-yellow-400 border p-2 hover:text-white">
+        {children}
+    </button>
+);
 
 export default Button;

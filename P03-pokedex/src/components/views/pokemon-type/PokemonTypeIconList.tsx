@@ -28,6 +28,6 @@ const PokemonTyeIconList: React.FC<PokemonTypeIconListProps> = ({ pokemonDataTyp
             ))}
         </div>
     );
-}
+};
 
 export default PokemonTyeIconList;

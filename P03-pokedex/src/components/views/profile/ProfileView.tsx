@@ -8,8 +8,14 @@ const ProfileView: React.FC = () => {
     const finishSearch = useSearchStore(state => state.finishSearch);
 
     finishSearch();
+
+    if (pokemonName) {
+        return (
+            <PokemonInfo pokemonRef={pokemonName} />
+        );
+    }
     
-    return pokemonName ? <PokemonInfo pokemonRef={pokemonName} /> : <></>;
+    return (<></>);
 }
 
 export default ProfileView;
