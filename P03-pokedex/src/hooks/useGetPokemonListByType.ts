@@ -19,7 +19,7 @@ const useGetPokemonListByType = ({ pokemonType }: GetPokemonListByTypeProps): Ge
             const response = await fetch(`${API_BASE_URL}/type/${pokemonType}`);
             
             if (!response.ok) {
-                throw new Error("Network response was not ok");
+                throw new Error("Network response was not ok.");
             }
         
             return await response.json();
